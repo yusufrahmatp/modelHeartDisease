@@ -3,8 +3,8 @@ A web-based application that will predict by the specified input whether there i
 
 
 ## Author
+Azka Nabilah Mumtaz - 13516013<br>
 Yusuf Rahmat Pratama - 13516062<br>
-[Name] - 13516<br>
-[Name] - 13516<br>
-[Name] - 13516<br>
-[Name] - 13516<br>
+Faza Fahleraz - 13516095<br>
+Kelvin Kristian - 13516101<br>
+Steven Sukma Limanus - 13516102

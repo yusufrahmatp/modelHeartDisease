@@ -50,15 +50,19 @@ def predict_input(imported_model, test):
     return predicted_test
 
 
-def main():
+def heart_disease_type(age, sex, chest_pain_type, rest_blood_pressure, serum_cholestrol, 
+                high_fasting_blood_sugar, resting_ecg, max_heart_rate, exercise_induced_angina, 
+                st_depression, peak_exercise_st, major_vessels_num, thal):
     imported_model = joblib.load('../models/heart_disease.joblib')
-    # hardcode input please change later
-    test = input_data(999.0, 1.0, 2.0, 160.0, 267.0, 1.0, 1.0, 157.0, 0.0, 0.5, 2.0, 0.0, 7.0)
+    test = input_data(age, sex, chest_pain_type, rest_blood_pressure, serum_cholestrol, 
+                high_fasting_blood_sugar, resting_ecg, max_heart_rate, exercise_induced_angina, 
+                st_depression, peak_exercise_st, major_vessels_num, thal)
     test = preprocessed_input(test)
     result = predict_input(imported_model, test)
     print("Result = ", result)
+    result = int(result[0])
+    return result
 
-main()
 
 
 

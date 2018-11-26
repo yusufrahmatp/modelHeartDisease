@@ -1,9 +1,15 @@
 from flask import Flask, redirect, url_for, request, jsonify
+from flask_cors import *
+from flask import render_template
 import model_loader
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='build', static_folder='build/static')
+app.config['SECRET_KEY'] = 'the quick brown fox jumps over the lazy   dog'
+app.config['CORS_HEADERS'] = 'Content-Type'
+cors = CORS(app, resources={r"/heartdisease": {"origins": "http://localhost:5000"}})
 
-@app.route('/heartdisease',methods = ['POST'])
+@app.route('/heartdisease',  methods=['POST'])
+@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 def heartdisease():
     json_input = request.get_json()
     age = json_input['age']
@@ -25,6 +31,12 @@ def heartdisease():
                 st_depression, peak_exercise_st, major_vessels_num, thal)
 
     return jsonify({'result' : 'Success', 'heart_disease_type' : disease_type})
+
+@app.route('/', methods=['GET'])
+@cross_origin(supports_credentials=True)
+def home():
+    return render_template('index.html')
+
 
 if __name__ == '__main__':
    app.run(debug = True, port=5000)

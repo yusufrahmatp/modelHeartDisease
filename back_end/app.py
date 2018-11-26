@@ -7,7 +7,6 @@ app = Flask(__name__, template_folder='build', static_folder='build/static')
 CORS(app)
 
 @app.route('/heartdisease',  methods=['POST'])
-@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 def heartdisease():
     json_input = request.get_json()
     age = json_input['age']
@@ -31,7 +30,6 @@ def heartdisease():
     return jsonify({'result' : 'Success', 'heart_disease_type' : disease_type})
 
 @app.route('/', methods=['GET'])
-@cross_origin(supports_credentials=True)
 def home():
     return render_template('index.html')
 

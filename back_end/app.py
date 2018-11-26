@@ -1,7 +1,9 @@
 from flask import Flask, redirect, url_for, request, jsonify
+from flask_cors import CORS
 import model_loader
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/heartdisease',methods = ['POST'])
 def heartdisease():

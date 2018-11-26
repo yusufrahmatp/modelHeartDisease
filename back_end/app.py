@@ -1,12 +1,10 @@
 from flask import Flask, redirect, url_for, request, jsonify
-from flask_cors import *
 from flask import render_template
+from flask_cors import CORS
 import model_loader
 
 app = Flask(__name__, template_folder='build', static_folder='build/static')
-app.config['SECRET_KEY'] = 'the quick brown fox jumps over the lazy   dog'
-app.config['CORS_HEADERS'] = 'Content-Type'
-cors = CORS(app, resources={r"/heartdisease": {"origins": "http://localhost:5000"}})
+CORS(app)
 
 @app.route('/heartdisease',  methods=['POST'])
 @cross_origin(origin='localhost',headers=['Content- Type','Authorization'])

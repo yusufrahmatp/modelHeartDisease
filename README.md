@@ -6,8 +6,10 @@ A web-based application that will predict by the specified input whether there i
 ```
 python app.py
 ```
-2. API is ready and will be used in the application
-3. Run the front-end application. Repo is available here: [frontEndHeartDisease](https://github.com/stevensukma/frontEndHeartDisease)
+2. Access the web through
+```
+localhost:5000
+```
 
 ## Author
 Azka Nabilah Mumtaz - 13516013<br>

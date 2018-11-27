@@ -15,7 +15,7 @@ def input_data(age, sex, chest_pain_type, rest_blood_pressure, serum_cholestrol,
     test_new.columns = ['age', 'sex', 'chest_pain_type', 'rest_blood_pressure', 'serum_cholestrol', 
                     'high_fasting_blood_sugar', 'resting_ecg', 'max_heart_rate', 'exercise_induced_angina',
                     'st_depression', 'peak_exercise_st', 'major_vessels_num', 'thal']
-    test = pd.read_csv('../data/tubes2_HeartDisease_test.csv')
+    test = pd.read_csv('./data/tubes2_HeartDisease_test.csv')
     
     test.columns = ['age', 'sex', 'chest_pain_type', 'rest_blood_pressure', 'serum_cholestrol', 
                     'high_fasting_blood_sugar', 'resting_ecg', 'max_heart_rate', 'exercise_induced_angina',
@@ -53,7 +53,7 @@ def predict_input(imported_model, test):
 def heart_disease_type(age, sex, chest_pain_type, rest_blood_pressure, serum_cholestrol, 
                 high_fasting_blood_sugar, resting_ecg, max_heart_rate, exercise_induced_angina, 
                 st_depression, peak_exercise_st, major_vessels_num, thal):
-    imported_model = joblib.load('../models/heart_disease.joblib')
+    imported_model = joblib.load('./models/heart_disease.joblib')
     test = input_data(age, sex, chest_pain_type, rest_blood_pressure, serum_cholestrol, 
                 high_fasting_blood_sugar, resting_ecg, max_heart_rate, exercise_induced_angina, 
                 st_depression, peak_exercise_st, major_vessels_num, thal)

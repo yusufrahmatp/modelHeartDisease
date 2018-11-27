@@ -1,6 +1,12 @@
 # Heart Disease Predictor
 A web-based application that will predict by the specified input whether there is a presence of heart disease.
 
+## Running the Program
+1. In the root folder, run
+```
+python app.py
+```
+2. API is ready and will be used in the application
 
 ## Author
 Azka Nabilah Mumtaz - 13516013<br>
